@@ -6,6 +6,8 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '@styles/theme';
 import CssBaseline from '@mui/material/CssBaseline';
+import { ApolloProvider } from '@apollo/client';
+import client from '@lib/apolloClient';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,10 +23,12 @@ export default function MyApp(props: MyAppProps) {
         <title>My page</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />]
-      </ThemeProvider>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />]
+        </ThemeProvider>
+      </ApolloProvider>
     </CacheProvider>
   );
 }

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { Container } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
+import { gql } from '@apollo/client';
 
 export default function Index() {
   return (

@@ -40,6 +40,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/display-name': 'off',
     'react/require-default-props': 0,
+    'import/prefer-default-export': 1,
   },
   settings: {
     'import/resolver': {
